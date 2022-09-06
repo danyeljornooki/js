@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body{
+    font-family: "Opens Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: -webkit-center;
+    align-items: center;
+}
+
+#valores{
+    width: 50%;
+}
+
+.input{
+    display: block;
+    width: 50%;
+    margin-bottom: 15px;
+}
