@@ -1,5 +1,4 @@
 function calcular(num1, num2) {
-  var divR = document.getElementById("resultado");
   var num1 = document.getElementById("a").value;
   var num2 = document.getElementById("b").value;
   var p;
@@ -9,9 +8,7 @@ function calcular(num1, num2) {
     if (result == undefined) {
       console.log(result);
     } else {
-      p.append(result);
-      divR.appendChild(p);
-      console.log(p);
+      Enviar(result);
     }
   } else {
     alert("Escreva um número inteiro");
@@ -27,17 +24,19 @@ function contas(num1, num2) {
   var div = num1 / num2.toFixed(2);
 
   if (num1 % 1 === 0 && num2 % 1 === 0) {
-    return (result = document.createTextNode(
-      "Soma = " +
-        soma +
-        " | Subtração = " +
-        sub +
-        " | Multiplicação = " +
-        mult +
-        " | Divisão = " +
-        div
-    ));
+    return (result = "Soma = " + soma +
+      " | Subtração = " + sub +
+      " | Multiplicação = " +mult +
+      " | Divisão = " +div);
   } else {
     return (result = alert("Escreva um número válido"));
   }
+}
+
+function Enviar(dados) {
+  var divR = document.getElementById("resultado");
+  var p = document.createElement("p");
+  result = document.createTextNode(dados);
+  p.append(result);
+  divR.appendChild(p);
 }

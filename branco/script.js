@@ -3,12 +3,6 @@ function calcular(frase) {
   var frase = document.getElementById("bA");
 
   if (op.value == "Enviar") {
-    var divEx = document.createElement("div");
-    let ret = document.getElementById("valores");
-    let parentDiv = ret.parentNode;
-    parentDiv.appendChild(divEx);
-    divEx.id = "resultado";
-    var divR = document.getElementById("resultado");
     var text = frase.value;
     var arrayF = text.split(" ");
     var branco = 0;
@@ -20,12 +14,8 @@ function calcular(frase) {
       }
     }
 
+    Enviar(branco)
     console.log(arrayF);
-
-    var p = document.createElement("p");
-    result = document.createTextNode("Essa frase tem " + branco + " espaços em branco");
-    p.append(result);
-    divR.appendChild(p);
     op.value = "Excluir";
   } else {
     op.value = "Enviar";
@@ -35,4 +25,18 @@ function calcular(frase) {
       divR.parentNode.removeChild(divR);
     }
   }
+}
+
+function Enviar(dados) {
+  var divEx = document.createElement("div");
+  let ret = document.getElementById("valores");
+  let parentDiv = ret.parentNode;
+  parentDiv.appendChild(divEx);
+  divEx.id = "resultado";
+  var divR = document.getElementById("resultado");
+
+  var p = document.createElement("p");
+  result = document.createTextNode("Essa frase tem " + dados + " espaços em branco");
+  p.append(result);
+  divR.appendChild(p);
 }

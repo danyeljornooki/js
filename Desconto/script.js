@@ -15,6 +15,5 @@ function calcular(num1, num2) {
 
 function contas(num1, num2) {
 total = num1 -((num1 * num2) / 100).toFixed(1);
-
   return (result = "O novo valor é: R$" + total);
 }

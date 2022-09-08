@@ -4,46 +4,24 @@ function calcular(alt, pes) {
   var pes = document.getElementById("b").value;
 
   if (op.value == "Enviar") {
-    var divEx = document.createElement("div");
-    let ret = document.getElementById("valores");
-    let parentDiv = ret.parentNode;
-    parentDiv.appendChild(divEx);
-    divEx.id = "resultado";
-    var divR = document.getElementById("resultado");
-
     if (parseInt(alt) % 1 === 0 && parseInt(pes) % 1 === 0) {
-      imc = conta(alt, pes);
+      imc = (pes / (alt * alt)).toFixed(2);
       if (imc < 20) {
-        var p = document.createElement("p");
-        result = document.createTextNode("Seu IMC é : " + imc + ", você está abaixo do peso");
-        p.append(result);
-        divR.appendChild(p);
-
+        result = "Seu IMC é : " + imc + ", você está abaixo do peso";
+        Enviar(result);
       } else if (imc >= 20 && imc < 25) {
-        var p = document.createElement("p");
-        result = document.createTextNode("Seu IMC é : " + imc + ", peso normal");
-        p.append(result);
-        divR.appendChild(p);
-
+        result = "Seu IMC é : " + imc + ", peso normal";
+        Enviar(result);
       } else if (imc >= 25 && imc < 30) {
-        var p = document.createElement("p");
-        result = document.createTextNode("Seu IMC é : " + imc + ", acima  do peso");
-        p.append(result);
-        divR.appendChild(p);
-      
+        result = "Seu IMC é : " + imc + ", acima  do peso";
+        Enviar(result);
       } else if (imc >= 30 && imc < 34) {
-        var p = document.createElement("p");
-        result = document.createTextNode("Seu IMC é : " + imc + ", obeso");
-        p.append(result);
-        divR.appendChild(p);
-      
+        result = "Seu IMC é : " + imc + ", obeso";
+        Enviar(result);
       } else {
-        var p = document.createElement("p");
-        result = document.createTextNode("Seu IMC é : " + imc + ", muito obeso");
-        p.append(result);
-        divR.appendChild(p);
+        result = "Seu IMC é : " + imc + ", muito obeso";
+        Enviar(result);
       }
-
     } else {
       alert("Escreva um número válido");
     }
@@ -58,6 +36,16 @@ function calcular(alt, pes) {
   }
 }
 
-function conta(alt, pes) {
-  return (pes / (alt * alt)).toFixed(2);
+function Enviar(dados) {
+  var divEx = document.createElement("div");
+  let ret = document.getElementById("valores");
+  let parentDiv = ret.parentNode;
+  parentDiv.appendChild(divEx);
+  divEx.id = "resultado";
+  var divR = document.getElementById("resultado");
+
+  var p = document.createElement("p");
+  result = document.createTextNode(dados);
+  p.append(result);
+  divR.appendChild(p);
 }

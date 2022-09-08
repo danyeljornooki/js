@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vetor</title>
+    <title>Jogo</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
-    <h1>Alterando vetor</h1>
+<body onload="numero()">
+    <h1>Adivinhe o número</h1>
     <div id="valores">
-        <input type="submit" id="btn" value="Enviar" onclick="calcular()">
+        <label>Escreva uma frase:</label>
+        <input type="number" id="bA" class="input">
+        <input type="submit" id="btn" value="Começar" onclick="calcular()">
     </div>
 </body>
 
