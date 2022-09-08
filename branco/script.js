@@ -9,13 +9,21 @@ function calcular(frase) {
     parentDiv.appendChild(divEx);
     divEx.id = "resultado";
     var divR = document.getElementById("resultado");
+    var text = frase.value;
+    var arrayF = text.split(" ");
+    var branco = 0;
 
-    let pal = frase;
+    for (let cont = 0; cont <= arrayF.length; cont++) {
+      if (cont >= 2) {
+        branco = branco + 1;
+        console.log(branco);
+      }
+    }
 
-    console.log("" + pal.lenght);
+    console.log(arrayF);
 
     var p = document.createElement("p");
-    result = document.createTextNode("A array ficou: ");
+    result = document.createTextNode("Essa frase tem " + branco + " espaços em branco");
     p.append(result);
     divR.appendChild(p);
     op.value = "Excluir";
