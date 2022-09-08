@@ -1,6 +1,6 @@
 function calcular(frase) {
   const op = document.getElementById("btn");
-  var frase = document.getElementById("a");
+  var frase = document.getElementById("bA");
 
   if (op.value == "Enviar") {
     var divEx = document.createElement("div");
