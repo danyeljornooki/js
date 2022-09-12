@@ -9,8 +9,7 @@ function calcular() {
   const op = document.getElementById("btn");
   var num = document.getElementById("bA").value;
 
-  if (op.value == "tentar" && cont < 10) {
-    var numA = [num];
+  if (op.value == "Começar" && cont < 10) {
     if (num == numeroPensado) {
       Enviar("Acertouu! o número era: " + numeroPensado);
       op.value = "Recomeçar";
@@ -28,18 +27,16 @@ function calcular() {
       op.value = "Recomeçar";
       Enviar("Acabou suas chances, você perdeu");
     }
-
-    console.log(cont);
+    
     console.log(num);
     console.log(numeroPensado);
+    console.log(cont);
+    
   } else {
-    op.value = "tentar";
-    var divR = document.getElementById("resultado");
-
-    if (divR.parentNode) {
-      divR.parentNode.removeChild(divR);
-      numeroPensado = Math.round(Math.random() * 10);
-    }
+      var btn = document.querySelector("#btn");
+      btn.addEventListener("click", function() {
+      location.reload();
+    });
   }
 }
 
